@@ -1,0 +1,252 @@
+//PREPARATION
+@import "mix.scss";
+@import "var.scss";
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #E5E5E5;
+}
+
+.container {
+    width: 1110px;
+}
+
+.btn {
+    width: 200px;
+    height: 45px;
+    background-color: $Accent;
+    border-radius: 30px;
+    border: none;
+    @include fonts(500, 16px, 20px, $white);
+    @include flex(center, center);
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.border {
+    width: 100%;
+    border: 0.5px solid $grey;
+}
+
+.circle {
+    &-big {
+        width: 110px;
+        height: 110px;
+        border: 1px solid $grey;
+        @include flex(center, center);
+        border-radius: 50%;
+    }
+    &-min {
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        border: 1px solid $Accent;
+        @include flex(center, center);
+    }
+}
+
+// WORKS
+// HEADER
+.header {
+    // height: auto;
+    height: 900px;
+    width: 100%;
+    @include flex(space-between, center) {
+        flex-direction: column;
+    }
+    ;
+    background-image: url(../img/head.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    // TOP
+    &-top {
+        border-bottom: 2px solid $grey;
+        width: 100%;
+        @include flex(center, center);
+    }
+    // CENTER
+    &-content {
+        @include flex(center, center);
+        margin-bottom: 335px;
+    }
+}
+
+// NAVIGATION
+.nav {
+    @include flex(flex-end, center);
+    height: 100px;
+    &-click {
+        padding: 40px 20px;
+        @include fonts(500, 16px, 20px, $white);
+        text-decoration: none;
+        &:hover {
+            border-bottom: 4px solid $white;
+            transition: 0.1s;
+        }
+    }
+}
+
+// PREV
+.prev {
+    @include flex(center, center) {
+        flex-direction: column;
+    }
+    ;
+    &-text {
+        @include fonts(500, 16px, 20px, $white);
+        margin-bottom: 20px;
+    }
+    &-title {
+        text-align: center;
+        margin-bottom: 50px;
+        @include fonts(800, 48px, 64px, $white);
+    }
+}
+
+// SERVICES
+.services {
+    background-color: $white;
+    padding-top: 110px;
+    @include flex(space-between, center) {
+        flex-direction: column;
+    }
+    ;
+    &-contant {
+        margin-bottom: 100px;
+        @include flex(space-between, center) {
+            flex-direction: column;
+        }
+        ;
+    }
+    &-title {
+        text-align: center;
+        @include fonts (700, 36px, 53px, $dark);
+        margin-bottom: 50px;
+    }
+    &-text {
+        text-align: center;
+        @include fonts (400, 16px, 25px, $grey);
+        margin-bottom: 70px;
+    }
+    // CATALOG
+    &-blocks {
+        float: left;
+        >.services-block {
+            @include grid(3, 5%);
+        }
+        margin-bottom: 55px;
+    }
+    &-block {
+        @include flex(space-between, center);
+        height: 140px;
+    }
+    &-left {}
+    &-right {}
+}
+
+.serv {
+    &-mini-title {
+        @include fonts(600, 18px, 22px, $dark);
+        margin-bottom: 8px;
+    }
+    &-mini-text {
+        @include fonts(400, 15px, 20px, $grey);
+    }
+}
+
+// ABOUT
+.about {
+    margin-top: 100px;
+    @include flex(center, center);
+    // &-content {
+    //     @include flex(space-between, center);
+    // }
+    &-up {
+        @include flex(space-between, center);
+        margin-bottom: 90px;
+    }
+    &-title {
+        @include fonts(700, 36px, 53px, $dark);
+        margin-bottom: 40px;
+    }
+    &-text {
+        @include fonts(400, 16px, 25px, $grey);
+        margin-bottom: 30px;
+    }
+    &-link {
+        @include fonts(500, 16px, 20px, $Accent);
+    }
+    &-down {
+        @include flex(center, center);
+    }
+}
+
+.our {
+    &-project {
+        padding: 70px 50px;
+        width: 100px;
+        @include flex(center, center) {
+            flex-direction: column;
+        }
+        ;
+    }
+    &-info {
+        width: 100%;
+        @include flex(space-between, center);
+    }
+}
+
+// PROJECTS
+.projects {
+    &-color {
+        @include flex(center, flex-start);
+        z-index: 1;
+        height: 490px;
+        background: linear-gradient(90deg, #504DC2 20.44%, #5F12D0 80.91%);
+    }
+    &-content {
+        z-index: 2;
+    }
+    &-white {
+        height: 562px;
+        background-color: $white;
+    }
+    &-up {
+        @include flex(space-between, center);
+        margin-bottom: 70px;
+        margin-top: 100px;
+    }
+    &-title {
+        @include fonts(700, 36px, 53px, $white);
+        &-mini {
+            @include fonts(600, 18px, 22px, $dark);
+            margin-bottom: 30px;
+        }
+    }
+    &-text {
+        @include fonts(400, 16px, 25px, $grey);
+        margin-bottom: 30px;
+    }
+    &-border {
+        margin-bottom: 85px;
+    }
+    // BLOCKS 
+    &-blocks {
+        width: 100%;
+        border-bottom: 1px solid $grey;
+        float: left;
+        >.projects-block {
+            @include grids(3, 30px);
+        }
+        padding-bottom: 85px;
+    }
+}
+
+.img-proj {
+    margin-bottom: 30px;
+}
